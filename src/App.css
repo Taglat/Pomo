@@ -1,19 +1,26 @@
 :root {
   --color-bg: #fff;
+  --color-bg-hover: #ccc;
   --color-text: #000;
-  --color-hover-bg: #000;
-  --color-hover-text: #000;
+  --color-border: #000;
+  --color-border-hover: #000;
 }
 
-body {
-  background: var(--color-bg);
-  color: var(--color-text);
-  font-size: 32px;
-  font-weight: 600;
+.dark-theme {
+  --color-bg: #000;
+  --color-bg-hover: #333;
+  --color-text: #fff;
+  --color-border: #fff;
+  --color-border-hover: #333;
 }
 
 .container {
   max-width: 500px;
-  /* border: 1px solid black; */
+  border: 1px solid black;
   margin: 0 auto;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
 }

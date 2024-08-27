@@ -6,15 +6,17 @@ import clsx from "clsx";
  * children: any,
  * className?: string,
  * shape: 'circle' | 'rectangle',
+ * onClick?: () => void
  * }} props
  */
 
-export default function MyBtn({ className, children, shape }) {
+export default function MyBtn({ className, children, shape, onClick }) {
+
   const btnClassName = clsx(
     styles.btn, 
     className,
     styles[shape],
   );
 
-  return <button className={btnClassName}>{children}</button>;
+  return <button className={btnClassName} onClick={onClick}>{children}</button>;
 }
