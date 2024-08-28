@@ -1,17 +1,10 @@
-import ThemeSwitcher from "../../components/ThemeSwitcher/ThemeSwitcher";
-import MyBtn from "../../components/uikit/MyBtn";
-import styles from "./Settings.module.css";
-import { Link } from "react-router-dom";
+import { Header } from "../../components/Header/Header";
+import { SvgBack } from "../../icons";
 
-export function Settings() {
+export function Settings({mode}) {
   return (
-    <div>
-      <header className={styles.header}>
-        <Link to="/">
-          <MyBtn shape="rectangle">Pomo</MyBtn>
-        </Link>
-        <ThemeSwitcher />
-      </header>
-    </div>
+    <>
+      <Header link="/" linkPageName={SvgBack} />      
+    </>
   );
 }

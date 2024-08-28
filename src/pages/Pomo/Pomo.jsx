@@ -1,17 +1,13 @@
-import ThemeSwitcher from "../../components/ThemeSwitcher/ThemeSwitcher";
-import MyBtn from "../../components/uikit/MyBtn";
-import styles from "./Pomo.module.css";
-import { Link } from "react-router-dom";
+import { Header } from "../../components/Header/Header";
+import { SvgSettings } from "../../icons";
 
-export function Pomo() {
+export function Pomo({state}) {
+  const {mode} = state;
+
   return (
-    <div className={styles.pomo}>
-      <header className={styles.header}>
-        <Link to="/settings">
-          <MyBtn shape="rectangle">Settings</MyBtn>
-        </Link>
-        <ThemeSwitcher />
-      </header>
-    </div>
+    <>
+      <Header link="/settings" linkPageName={SvgSettings} />
+      <div>{mode}</div>
+    </>
   );
 }

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import MyBtn from "../uikit/MyBtn";
-import { moon, sun } from "./icons";
+import { SvgMoon, SvgSun } from "../../icons";
 
 export default function ThemeSwitcher() {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -12,7 +12,7 @@ export default function ThemeSwitcher() {
 
   return (
     <MyBtn shape="rectangle" onClick={() => toggleTheme()}>
-      {theme === "light" ? sun : moon}
+      {theme === "light" ? SvgSun : SvgMoon}
     </MyBtn>
   );
 }

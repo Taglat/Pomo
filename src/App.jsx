@@ -3,15 +3,19 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "./context/ThemeContext.jsx";
 import { Pomo } from "./pages/pomo/pomo";
 import { Settings } from "./pages/settings/settings";
+import { useReducer } from "react";
+import { initState, pomodoroReducer } from "./model/PomoReducer.js";
 
 export default function App() {
+  const [state, dispatch] = useReducer(pomodoroReducer, initState)
+
   return (
     <ThemeProvider>
       <div className="container">
         <Router>
           <Routes>
-            <Route path="/" element={<Pomo />} />
-            <Route path="/settings" element={<Settings />} />
+            <Route path="/" element={<Pomo state={state} />} />
+            <Route path="/settings" element={<Settings state={state} />} />
           </Routes>
         </Router>
       </div>
