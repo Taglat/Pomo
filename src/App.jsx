@@ -5,6 +5,7 @@ import { Pomo } from "./pages/pomo/pomo";
 import { Settings } from "./pages/settings/settings";
 import { useReducer } from "react";
 import { initState, pomodoroReducer } from "./model/PomoReducer.js";
+import { MODES_NAMES } from "./model/constants.js";
 
 export default function App() {
   const [state, dispatch] = useReducer(pomodoroReducer, initState)
