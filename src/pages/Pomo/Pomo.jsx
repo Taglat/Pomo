@@ -7,10 +7,10 @@ export function Pomo() {
   return (
     <div className={styles.pomo}>
       <header className={styles.header}>
-        <ThemeSwitcher />
         <Link to="/settings">
           <MyBtn shape="rectangle">Settings</MyBtn>
         </Link>
+        <ThemeSwitcher />
       </header>
     </div>
   );

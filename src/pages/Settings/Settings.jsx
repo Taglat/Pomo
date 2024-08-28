@@ -7,10 +7,10 @@ export function Settings() {
   return (
     <div>
       <header className={styles.header}>
-        <ThemeSwitcher />
         <Link to="/">
           <MyBtn shape="rectangle">Pomo</MyBtn>
         </Link>
+        <ThemeSwitcher />
       </header>
     </div>
   );
