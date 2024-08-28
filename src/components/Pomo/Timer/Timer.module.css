@@ -1,0 +1,6 @@
+.timerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(3rem, 51.4286vw + -2.7857rem, 12rem);
+}
