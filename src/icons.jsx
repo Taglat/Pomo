@@ -1,15 +1,5 @@
 export const SvgSettings = (
-  <svg
-    fill="#fff"
-    height="30px"
-    width="30px"
-    version="1.1"
-    id="Capa_1"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    viewBox="0 0 54 54"
-    xml:space="preserve"
-  >
+  <svg fill="var(--color-text)" height="30px" width="30px" version="1.1" viewBox="0 0 54 54">
     <g>
       <path
         d="M51.22,21h-5.052c-0.812,0-1.481-0.447-1.792-1.197s-0.153-1.54,0.42-2.114l3.572-3.571
@@ -46,22 +36,18 @@ export const SvgSettings = (
 
 export const SvgBack = (
   <svg
-    fill="#fff"
+    fill="var(--color-text)"
     height="30px"
     width="30px"
     version="1.1"
-    id="Capa_1"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 26.676 26.676"
-    xml:space="preserve"
-    stroke="#fff"
+    stroke="var(--color-text)"
   >
-    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
     <g
       id="SVGRepo_tracerCarrier"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     ></g>
     <g id="SVGRepo_iconCarrier">
       {" "}
@@ -85,14 +71,14 @@ export const SvgSun = (
   >
     <path
       d="M84.9473 134.963C112.57 134.963 134.963 112.57 134.963 84.9473C134.963 57.3243 112.57 34.9315 84.9473 34.9315C57.3244 34.9315 34.9316 57.3243 34.9316 84.9473C34.9316 112.57 57.3244 134.963 84.9473 134.963Z"
-      stroke="black"
+      stroke="var(--color-border)"
       strokeWidth="11.5421"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M139.888 139.888L138.887 138.887M138.887 31.0072L139.888 30.0069L138.887 31.0072ZM30.0069 139.888L31.0072 138.887L30.0069 139.888ZM84.9473 8.61558V8V8.61558ZM84.9473 161.895V161.279V161.895ZM8.61558 84.9473H8H8.61558ZM161.895 84.9473H161.279H161.895ZM31.0072 31.0072L30.0069 30.0069L31.0072 31.0072Z"
-      stroke="black"
+      stroke="var(--color-border)"
       strokeWidth="15.3895"
       strokeLinecap="round"
       strokeLinejoin="round"
