@@ -1,6 +1,42 @@
 .timerContainer {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--color-border);
+}
+
+.time {
+  font-size: clamp(3rem, 34.2857vw + -.8571rem, 9rem);
+}
+
+.next, .prev {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+
+.next:hover, .prev:hover {
+  background-color: var(--color-bg-hover);
+}
+
+.prev {
+  border-right: 1px solid var(--color-border);
+}
+.next {
+  border-left: 1px solid var(--color-border);
+}
+
+.info {
+  display: flex;
   justify-content: center;
-  font-size: clamp(3rem, 51.4286vw + -2.7857rem, 12rem);
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
 }
