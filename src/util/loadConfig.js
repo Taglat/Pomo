@@ -19,3 +19,12 @@ export function loadState(initState) {
   }
   return initState;
 }
+
+export function loadSound() {
+  const isSound = localStorage.getItem("isSound");
+  
+  if (isSound) {
+    return JSON.parse(isSound)
+  } 
+  return true;
+}

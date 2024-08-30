@@ -5,7 +5,7 @@ import { SvgBack, SvgFocus, SvgBreak, SvgRest } from "../../icons";
 import { ACTION_TYPES, MODES_NAMES } from "../../model/constants";
 import styles from "./Settings.module.css";
 
-export function Settings({ state, dispatch }) {
+export function Settings({ state, dispatch, sound, setSound }) {
   const { config } = state;
   const { focus, rest, focusesBeforeRest } = config;
 
@@ -45,7 +45,7 @@ export function Settings({ state, dispatch }) {
 
   return (
     <>
-      <Header link="/" linkPageName={SvgBack} />
+      <Header link="/" linkPageName={SvgBack} sound={sound} setSound={setSound} />
       <div className={styles.settingsContainer}>
         <div className={styles.inputRow}>
           <label className={styles.label}>Min for {SvgFocus}</label>

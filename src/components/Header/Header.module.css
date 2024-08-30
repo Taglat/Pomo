@@ -6,3 +6,8 @@
   padding: 5px;
   border-radius: 5px;
 }
+
+.headerSwitchers {
+  display: flex;
+  gap: 5px;
+}

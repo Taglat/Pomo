@@ -1,4 +1,7 @@
 import { SvgFocus, SvgBreak, SvgRest } from "../icons"
+import focusEndSound from '../audio/focusEnd.mp3';
+import restEndSound from '../audio/restEnd.mp3';
+import tickSound from '../audio/tick.mp3';
 
 export const MODES_NAMES = {
   FOCUS: 'focus',
@@ -33,5 +36,24 @@ export const ACTION_TYPES = {
   PREV_MODE: 'prev_mode',
   UPDATE_CONFIG: 'update_config',
   UPDATE_FOCUSES_BEFORE_REST: 'update_focuses_before_rest',
-  SET_CONFIG: 'set_config'
+  SET_CONFIG: 'set_config',
+  SOUND_SWITCH: 'sound_switch',
+}
+
+export const sounds = {
+  tick: new Audio(tickSound),
+  focusEnd: new Audio(focusEndSound),
+  restEnd: new Audio(restEndSound)
+}
+
+
+export function playSound(type) {
+  const sound = sounds[type];
+  if (sound) {
+    sound.play().catch(error => {
+      console.error(`Error playing sound ${type}:`, error);
+    });
+  } else {
+    console.warn(`No sound found for type ${type}`);
+  }
 }
