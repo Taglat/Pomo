@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Header } from "../../components/Header/Header";
 import { NumberInput } from "../../components/uikit/NumberInput";
 import { SvgBack, SvgFocus, SvgBreak, SvgRest } from "../../icons";
@@ -7,6 +8,20 @@ import styles from "./Settings.module.css";
 export function Settings({ state, dispatch }) {
   const { config } = state;
   const { focus, rest, focusesBeforeRest } = config;
+
+  useEffect(() => {
+    const savedConfig = JSON.parse(localStorage.getItem("pomodoroConfig"));
+    if (savedConfig) {
+      dispatch({
+        type: ACTION_TYPES.SET_CONFIG,
+        payload: savedConfig,
+      });
+    }
+  }, [dispatch]);
+
+  useEffect(() => {
+    localStorage.setItem("pomodoroConfig", JSON.stringify(config));
+  }, [config]);
 
   const handleInputChange = (mode, value) => {
     if (!isNaN(value)) {
@@ -32,7 +47,6 @@ export function Settings({ state, dispatch }) {
     <>
       <Header link="/" linkPageName={SvgBack} />
       <div className={styles.settingsContainer}>
-
         <div className={styles.inputRow}>
           <label className={styles.label}>Min for {SvgFocus}</label>
           <NumberInput
@@ -76,4 +90,3 @@ export function Settings({ state, dispatch }) {
     </>
   );
 }
-  

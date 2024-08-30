@@ -33,4 +33,5 @@ export const ACTION_TYPES = {
   PREV_MODE: 'prev_mode',
   UPDATE_CONFIG: 'update_config',
   UPDATE_FOCUSES_BEFORE_REST: 'update_focuses_before_rest',
+  SET_CONFIG: 'set_config'
 }

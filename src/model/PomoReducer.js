@@ -54,7 +54,8 @@ export function pomodoroReducer(state, action) {
 
       return {
         ...state,
-        config: updatedConfig,
+        config: syncConfig(updatedConfig),
+        isRunning: false,
         seconds:
           state.mode === action.payload.mode
             ? action.payload.value
@@ -65,6 +66,7 @@ export function pomodoroReducer(state, action) {
     case ACTION_TYPES.UPDATE_FOCUSES_BEFORE_REST:
       return {
         ...state,
+        isRunning: false,
         config: {
           ...state.config,
           focusesBeforeRest: action.payload,
@@ -115,4 +117,20 @@ function switchMode(state, payload = { direction: "next" }) {
   newState.seconds = state.config[newState.mode];
 
   return newState;
+}
+
+function syncConfig(config) {
+  const focusMinutes = config[MODES_NAMES.FOCUS] / 60;
+  
+  const maxBreak = Math.floor(focusMinutes * 0.63);
+  const minBreak = Math.max(1, Math.floor(focusMinutes * 0.2));
+  
+  const breakMinutes = Math.max(minBreak, Math.min(config[MODES_NAMES.BREAK] / 60, maxBreak));
+  const restMinutes = Math.max(breakMinutes + 1, Math.min(focusMinutes, config[MODES_NAMES.REST] / 60));
+
+  return {
+    ...config,
+    [MODES_NAMES.BREAK]: breakMinutes * 60,
+    [MODES_NAMES.REST]: restMinutes * 60,
+  };
 }

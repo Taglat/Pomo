@@ -5,10 +5,11 @@ import { Pomo } from "./pages/Pomo/Pomo.jsx";
 import { Settings } from "./pages/Settings/Settings.jsx";
 import { useReducer } from "react";
 import { initState, pomodoroReducer } from "./model/PomoReducer.js";
-import { MODES_NAMES } from "./model/constants.js";
+import { loadState } from "./util/loadConfig.js";
 
 export default function App() {
-  const [state, dispatch] = useReducer(pomodoroReducer, initState)
+  console.log(loadState(initState))
+  const [state, dispatch] = useReducer(pomodoroReducer, loadState(initState))
 
   return (
     <ThemeProvider>
