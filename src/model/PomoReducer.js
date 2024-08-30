@@ -43,23 +43,47 @@ export function pomodoroReducer(state, action) {
         seconds: newSeconds,
       };
     case ACTION_TYPES.SWITCH_MODE:
-        return switchMode(state, { direction: 'next' });
+      return switchMode(state, { direction: "next" });
     case ACTION_TYPES.PREV_MODE:
-        return switchMode(state, { direction: 'prev' });
+      return switchMode(state, { direction: "prev" });
+    case ACTION_TYPES.UPDATE_CONFIG:
+      const updatedConfig = {
+        ...state.config,
+        [action.payload.mode]: action.payload.value,
+      };
+
+      return {
+        ...state,
+        config: updatedConfig,
+        seconds:
+          state.mode === action.payload.mode
+            ? action.payload.value
+            : state.seconds,
+        mode: MODES_NAMES.FOCUS,
+        focuses: 0,
+      };
+    case ACTION_TYPES.UPDATE_FOCUSES_BEFORE_REST:
+      return {
+        ...state,
+        config: {
+          ...state.config,
+          focusesBeforeRest: action.payload,
+        },
+      };
     default: {
       return state;
     }
   }
 }
 
-function switchMode(state, payload = { direction: 'next' }) {
+function switchMode(state, payload = { direction: "next" }) {
   const { mode, focuses } = state;
   const { focusesBeforeRest } = state.config;
   const direction = payload.direction;
 
   const newState = { ...state };
 
-  if (direction === 'next') {
+  if (direction === "next") {
     if (mode === MODES_NAMES.FOCUS) {
       if ((focuses + 1) % focusesBeforeRest === 0) {
         newState.mode = MODES_NAMES.REST;
@@ -72,7 +96,7 @@ function switchMode(state, payload = { direction: 'next' }) {
     } else if (mode === MODES_NAMES.REST) {
       newState.mode = MODES_NAMES.FOCUS;
     }
-  } else if (direction === 'prev') {
+  } else if (direction === "prev") {
     if (mode === MODES_NAMES.FOCUS) {
       if (focuses % focusesBeforeRest === 0) {
         newState.mode = MODES_NAMES.REST;

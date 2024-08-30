@@ -34,7 +34,7 @@ export function Pomo({ state, dispatch }) {
           </div>
         ))}
       </div>
-      <Timer seconds={seconds} focuses={focuses} config={config} dispatch={dispatch} />
+      <Timer mode={mode} seconds={seconds} focuses={focuses} config={config} dispatch={dispatch} />
       <div className={style.btns}>
         <MyBtn
           shape="circle"

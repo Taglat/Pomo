@@ -1,8 +1,8 @@
 import { SvgNext, SvgPrev, SvgFocus, SvgRest } from "../../../icons";
-import { ACTION_TYPES } from "../../../model/constants";
+import { ACTION_TYPES, MODES_NAMES } from "../../../model/constants";
 import styles from "./Timer.module.css";
 
-export function Timer({ seconds, focuses, dispatch }) {
+export function Timer({ mode, seconds, focuses, dispatch }) {
   const formattedMinutes = String(Math.floor(seconds / 60)).padStart(2, "0");
   const formattedSeconds = String(seconds % 60).padStart(2, "0");
 
@@ -11,7 +11,9 @@ export function Timer({ seconds, focuses, dispatch }) {
       <div
         className={styles.prev}
         onClick={() => {
-          dispatch({ type: ACTION_TYPES.PREV_MODE });
+          if (!(mode === MODES_NAMES.FOCUS && focuses <= 0)) {
+            dispatch({ type: ACTION_TYPES.PREV_MODE });
+          }
         }}
       >
         {SvgPrev}

@@ -15,8 +15,9 @@
 }
 
 .container {
-  max-width: 500px;
-  border: 1px solid black;
+  max-width: 300px;
+  height: 380px;
+  /* border: 1px solid black; */
   margin: 0 auto;
   background-color: var(--color-bg);
   color: var(--color-text);

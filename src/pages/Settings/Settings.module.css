@@ -1,0 +1,36 @@
+.settingsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-size: 20px;
+  padding: 10px;
+  border: 1px solid var(--color-text);
+  border-radius: 5px;
+}
+
+.inputRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:nth-child(4) svg:nth-child(1) {
+    margin-left: 0px;
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+
+  & svg {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+
+.input {
+  background: var(--color-bg);
+  color: var(--color-text);
+  appearance: textfield
+}

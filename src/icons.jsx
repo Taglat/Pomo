@@ -210,8 +210,8 @@ export const SvgBreak = (
 
 export const SvgRest = (
   <svg
-    width="20"
-    height="20"
+    width="27"
+    height="27"
     viewBox="0 0 20 20"
     fill="var(--color-bg)"
     xmlns="http://www.w3.org/2000/svg"

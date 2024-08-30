@@ -3,10 +3,11 @@
   align-items: center;
   justify-content: space-between;
   border: 1px solid var(--color-border);
+  border-radius: 5px;
 }
 
 .time {
-  font-size: clamp(3rem, 34.2857vw + -.8571rem, 9rem);
+  font-size: 88px;
 }
 
 .next, .prev {

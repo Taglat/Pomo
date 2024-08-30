@@ -9,17 +9,17 @@ export const MODES_NAMES = {
 export const MODES = {
   [MODES_NAMES.FOCUS]: {
     name: MODES_NAMES.FOCUS,
-    seconds: 10,
+    seconds: 25 * 60,
     svg: SvgFocus,
   },
   [MODES_NAMES.BREAK]: {
     name: MODES_NAMES.BREAK,
-    seconds: 5,
+    seconds: 5 * 60,
     svg: SvgBreak,
   },
   [MODES_NAMES.REST]: {
     name: MODES_NAMES.REST,
-    seconds: 50,
+    seconds: 15 * 60,
     svg: SvgRest,
   }
 }
@@ -31,4 +31,6 @@ export const ACTION_TYPES = {
   TICK: 'tick',
   SWITCH_MODE: 'switch_mode',
   PREV_MODE: 'prev_mode',
+  UPDATE_CONFIG: 'update_config',
+  UPDATE_FOCUSES_BEFORE_REST: 'update_focuses_before_rest',
 }
