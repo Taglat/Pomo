@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "./context/ThemeContext.jsx";
 import { Pomo } from "./pages/Pomo/Pomo.jsx";
 import { Settings } from "./pages/Settings/Settings.jsx";
